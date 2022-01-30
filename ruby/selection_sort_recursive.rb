@@ -1,5 +1,12 @@
 def selection_sort_recursive(arr)
-  # type your code in here
+  # BASE CASE
+  return [] if arr.length === 0
+
+  min = arr.min
+  idx = arr.index(min)
+  arr.delete_at(idx)
+  result = selection_sort_recursive(arr)
+  result.unshift(min)
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -9,7 +16,9 @@ if __FILE__ == $PROGRAM_NAME
 
   puts
 
-  # Don't forget to add your own!
+  puts "Expecting: [-3, 0, 3]"
+  print "=> "
+  print selection_sort_recursive([0, -3, 3])
 end
 
 # Please add your pseudocode to this file
